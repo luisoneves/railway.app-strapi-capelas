@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_layout_heroes",
+  "info": {
+    "displayName": "Hero",
+    "icon": "cast"
+  },
+  "options": {},
+  "attributes": {
+    "H1Titulo": {
+      "type": "string"
+    },
+    "H2Subtitulo": {
+      "type": "string"
+    },
+    "Banner": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "botaoLabel": {
+      "type": "string"
+    },
+    "botaoUrl": {
+      "type": "string"
+    }
+  }
+}

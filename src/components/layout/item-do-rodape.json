@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_layout_item_do_rodapes",
+  "info": {
+    "displayName": "Item do Rodape",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

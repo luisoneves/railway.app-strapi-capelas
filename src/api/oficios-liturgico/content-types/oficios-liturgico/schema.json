@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "oficios_liturgicos",
+  "info": {
+    "singularName": "oficios-liturgico",
+    "pluralName": "oficios-liturgicos",
+    "displayName": "oficiosLiturgico"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "richtext"
+    },
+    "imgoficios": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

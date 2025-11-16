@@ -369,6 +369,77 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiConfiguracaoGeralConfiguracaoGeral
+  extends Struct.SingleTypeSchema {
+  collectionName: 'configuracao_gerals';
+  info: {
+    description: '';
+    displayName: 'Configuracao Geral';
+    pluralName: 'configuracao-gerals';
+    singularName: 'configuracao-geral';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Banner: Schema.Attribute.Component<'layout.hero', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricaoSite: Schema.Attribute.Text & Schema.Attribute.Required;
+    emailContato: Schema.Attribute.String;
+    endereco: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::configuracao-geral.configuracao-geral'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images' | 'files'>;
+    menuPrincipal: Schema.Attribute.Component<'layout.item-de-menu', true>;
+    nomeDoSite: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    redesSociais: Schema.Attribute.Component<'layout.item-do-rodape', true>;
+    telefone: Schema.Attribute.String;
+    textoRodape: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    whatsapp: Schema.Attribute.String;
+  };
+}
+
+export interface ApiOficiosLiturgicoOficiosLiturgico
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'oficios_liturgicos';
+  info: {
+    displayName: 'oficiosLiturgico';
+    pluralName: 'oficios-liturgicos';
+    singularName: 'oficios-liturgico';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descricao: Schema.Attribute.RichText;
+    imgoficios: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::oficios-liturgico.oficios-liturgico'
+    > &
+      Schema.Attribute.Private;
+    nome: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -878,6 +949,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::configuracao-geral.configuracao-geral': ApiConfiguracaoGeralConfiguracaoGeral;
+      'api::oficios-liturgico.oficios-liturgico': ApiOficiosLiturgicoOficiosLiturgico;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
